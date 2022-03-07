@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+button{
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    border: 1px solid purple;
+    background-color: lavender;
+    margin-left: 10px;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+button:active{
+    background-color: plum;
+}
+
+.products{
+    display: flex;
+}
+
+.product-item{
+    padding: 20px;
+    border: 1px solid lightgrey;
+    margin: 20px 10px;
+}
+
+.product-item h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-item button{
+    width: 100px;
+    height: 30px;
+    margin-left: 0;
+}
+
+.product-item:hover{
+    background-color: aliceblue;
+}
