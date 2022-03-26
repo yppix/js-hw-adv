@@ -1,6 +1,7 @@
 const cartBtn = document.querySelector('.btn-cart');
 const productContainer = document.querySelector('.products');
 const cartElement = document.querySelector('.cart-products');
+const quantityElement = document.querySelector('.quantity');
 
 class GoodsItem {
     constructor(item) {
@@ -92,6 +93,7 @@ class CartItem {
         } else {
             this.cart[this.id].count++
         }
+        this.getCounter()
     }
 
     _checkCart() {
@@ -101,6 +103,18 @@ class CartItem {
         } else {
             return false;
         }
+    }
+
+    getCounter() {
+        const valuesArray = Object.values(this.cart);
+        let sum = 0;
+
+        for (let value of valuesArray) {
+            sum += value.count;
+        }
+
+        quantityElement.innerHTML = '';
+        quantityElement.innerHTML = sum;
     }
 
     render(id) {
