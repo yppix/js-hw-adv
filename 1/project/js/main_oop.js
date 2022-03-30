@@ -2,11 +2,11 @@ const cartBtn = document.querySelector('.btn-cart');
 const productContainer = document.querySelector('.products');
 const cartElement = document.querySelector('.cart-products');
 const quantityElement = document.querySelector('.quantity');
-
+const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/';
 class GoodsItem {
     constructor(item) {
-        this.id = item.id;
-        this.title = item.title;
+        this.id = item.id_product;
+        this.title = item.product_name;
         this.price = item.price;
     }
 
@@ -28,27 +28,28 @@ class GoodsItem {
 }
 
 class GoodsList {
-    constructor(productContainer) {
+    constructor() {
         this.goods = [];
-        this.container = productContainer;
         this._fetchProducts();
-        this.render();
     }
 
     _fetchProducts() {
-        this.goods = [
-            {id: 1, title: 'Notebook', price: 2000},
-            {id: 2, title: 'Mouse', price: 20},
-            {id: 3, title: 'Keyboard', price: 200},
-            {id: 4, title: 'Gamepad', price: 50},
-        ]
+        return fetch(`${API_URL}/catalogData.json`)
+            .then(goods => goods.json())
+            .then(data => {
+                this.goods = data;
+                this.goods.forEach(item=>
+                    {
+                        this.render(item);
+                    }
+                )
+                });
     }
 
-    render() {
-        for (let item of this.goods) {
+    render(item) {
+        console.log(item);
             const product = new GoodsItem(item);
             productContainer.insertAdjacentHTML('beforeend', product.render());
-        }
     }
 }
 
@@ -117,6 +118,10 @@ class CartItem {
         quantityElement.innerHTML = sum;
     }
 
+    removeItem(){
+
+    }
+
     render(id) {
 
         if ((document.querySelector(`.header_cart_item[data-id="${id}"]`))) {
@@ -164,6 +169,10 @@ class Cart extends CartItem {
         }
 
         return `<div class="total-quantity"> Количество товаров: ${sum} </div>`;
+    }
+
+    clearCart(){
+
     }
 
     render() {
