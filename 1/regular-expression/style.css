@@ -1,0 +1,25 @@
+.callback{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.callback label{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: Arial sans-serif;
+}
+
+.callback input{
+    margin: 10px 0;
+    padding: 8px;
+}
+
+.callback button{
+    margin-top: 20px;
+}
+
+.error{
+    border: 2px solid red;
+}
