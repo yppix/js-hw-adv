@@ -1,0 +1,48 @@
+{
+    "amount": 1100,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 21,
+            "id_product": 2,
+            "imgProduct": "img/2-item.jpg",
+            "product_name": "Another Product",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "price": 500
+        },
+        {
+            "quantity": 12,
+            "id_product": 3,
+            "imgProduct": "img/3-item.jpg",
+            "product_name": "Something New",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "price": 1000
+        },
+        {
+            "quantity": 6,
+            "id_product": 1,
+            "imgProduct": "img/1-item.jpg",
+            "product_name": "Awesome Product",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "price": 100
+        },
+        {
+            "quantity": 10,
+            "id_product": 4,
+            "imgProduct": "img/4-item.jpg",
+            "product_name": "Dummy Thing",
+            "description": "Lorem ipsum dolor sit amet.",
+            "price": 1500,
+            "imgPath": "img/4.jpg"
+        },
+        {
+            "quantity": 5,
+            "id_product": 5,
+            "imgProduct": "img/5-item.jpg",
+            "product_name": "Product Example",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "price": 300,
+            "imgPath": "img/5.jpg"
+        }
+    ]
+}
