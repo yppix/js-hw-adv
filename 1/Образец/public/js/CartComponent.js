@@ -51,6 +51,12 @@ Vue.component('cart', {
                     }
                 })
         },
+        deleteProduct(item){
+            this.$parent.delJson(`/api/cart/${item.id_product}`)
+                .then(data => {
+                    this.$delete(item);
+                })
+        },
         cartCount() {
             return this.cartItems.reduce((summ, item) => summ + item.quantity, 0);
           },
@@ -116,6 +122,7 @@ Vue.component('cart-item', {
                 <button class="btnInCart" @click="$emit('add-product', cartItem)"> + </button>
             </div>          
             <p>Сумма: {{ cartItem.price * cartItem.quantity }}</p>
+            <button class="btnInCartDel" @click="$emit('delete', cartItem)">Удалить</button>
         </div>
         
     </div>
