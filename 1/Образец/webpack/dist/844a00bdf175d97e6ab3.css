@@ -1,0 +1,24 @@
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = require("!!../../webpack/node_modules/css-loader/dist/cjs.js!./normalize.css");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = require("!../../webpack/node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("864a3dd4", content, false, {});
+// Hot Module Replacement
+if(module.hot) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../webpack/node_modules/css-loader/dist/cjs.js!./normalize.css", function() {
+     var newContent = require("!!../../webpack/node_modules/css-loader/dist/cjs.js!./normalize.css");
+     if(newContent.__esModule) newContent = newContent.default;
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
